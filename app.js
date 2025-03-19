@@ -51,4 +51,29 @@ function actualizarLista(){
 }
 
 
+//3. Implementa una función para sortear los amigos
+function sortearAmigo(){
+
+    //validar que haya amigos disponibles
+    if (amigos.length === 0){
+        alert ("Por favor, ingresar un nombre para comenzar.");
+    }
+
+    //generar un índice aleatorio y obtener el nombre correspondiente
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    let nombreSorteado = amigos[indiceAleatorio];
+
+    //mostrar el resultado
+    let resultadoFinal = document.getElementById("resultado");
+    resultadoFinal.innerHTML = `¡El amigo sorteado es: ${nombreSorteado}!`; 
+    borrarLista ();
+}
+
+function borrarLista (){
+    let listaBorrada = document.getElementById('listaAmigos');
+    listaBorrada.innerHTML = "";
+    amigos = [];
+
+}
+
 //
